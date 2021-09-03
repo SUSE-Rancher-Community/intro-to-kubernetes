@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-pod
+spec:
+  containers:
+    - name: express-test
+      image: lukondefmwila/express-test:latest
+      command: ['sh', '-c', 'echo "configmap: $CONFIGMAPVAR secret: $SECRETVAR"']
+      env:
+        - name: CONFIGMAPVAR
+          valueFrom:
+            configMapKeyRef:
+              name: my-configmap
+              key: key1
+        - name: SECRETVAR
+          valueFrom:
+            secretKeyRef:
+              name: my-secret
+              key: username

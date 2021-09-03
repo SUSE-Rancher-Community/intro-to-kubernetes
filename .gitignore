@@ -1,0 +1,9 @@
+.vagrant
+
+# Log files
+*.log
+
+# RKE generated files
+cluster.rkestate
+
+kube_config_cluster.yml

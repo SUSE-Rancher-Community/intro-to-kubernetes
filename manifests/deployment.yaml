@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: express-test
+spec:
+ replicas: 3
+ selector:
+   matchLabels:
+     app: express-test
+ template:
+   metadata:
+     labels:
+       app: express-test
+   spec:
+     containers:
+     - name: express-test
+       image: lukondefmwila/express-test:latest
+       ports:
+       - containerPort: 8080

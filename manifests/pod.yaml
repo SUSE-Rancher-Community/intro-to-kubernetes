@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: express-test
+  labels:
+    app: express-test
+spec:
+  containers:
+  - name: express-test
+    image: lukondefmwila/express-test:latest
+    ports:
+      - containerPort: 8080
