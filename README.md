@@ -1,7 +1,5 @@
-# Create Local Kubernetes Cluster with RKE
-This repository contains the source code for a local Kubernetes cluster setup using Vagrant and [Rancher Kubernetes Engine (RKE)](https://rancher.com/docs/rke/latest/en/). 
-
-![Rancher Kubernetes Engine Logo](rke.png)
+# Introduction to Kubernetes
+This repository contains the source code for creating a local Kubernetes cluster setup using Vagrant and [Rancher Kubernetes Engine (RKE)](https://rancher.com/docs/rke/latest/en/). It also contains a set of manifest files to deploy a basic application to your local K8s cluster.
 
 ## Requirements/Prerequisites
 - [Rancher Kubernetes Engine (RKE)](https://rancher.com/docs/rke/latest/en/installation/)
@@ -42,3 +40,6 @@ or
 ```
 kubectl config current-context
 ```
+
+## Manifests
+The Kubernetes resources can be found inside the *manifests* folder.
