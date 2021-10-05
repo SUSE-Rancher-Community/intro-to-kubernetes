@@ -1,5 +1,37 @@
 # Introduction to Kubernetes
-This repository contains the source code for creating a local Kubernetes cluster setup using Vagrant and [Rancher Kubernetes Engine (RKE)](https://rancher.com/docs/rke/latest/en/). It also contains a set of manifest files to deploy a basic application to your local K8s cluster.
+
+![K8s Logo](Kubernetes_Logo.png)
+
+This repository contains the source code for creating a local Kubernetes cluster setup using either [K3d](https://k3d.io/v4.4.8/) or [Rancher Kubernetes Engine (RKE)](https://rancher.com/docs/rke/latest/en/). It also contains a set of manifest files to deploy a basic application to your local K8s cluster.
+
+## Slide Deck
+The slide deck for the `Introduction to Kubernetes` course can be found in the *slide-deck* folder.
+
+## Create Local Kubernetes Cluster with K3d
+k3d is a lightweight wrapper to run k3s (Rancher Lab’s minimal Kubernetes distribution) in docker. 
+
+![K3d Logo](k3d-logo.png)
+
+## Requirements/Prerequisites
+- [Docker](https://docs.docker.com/engine/install/)
+- [Install K3d](https://k3d.io/v4.4.8/#installation)
+
+## Provision Cluster with K3d
+The first step is to ensure that the docker engine is running on your machine.
+```
+k3d cluster create example-cluster --servers 3 --agents 2
+```
+
+## Delete Cluster with K3d
+You can delete a cluster with the following command:
+```
+k3d cluster delete example-cluster
+```
+
+## Create Local Kubernetes Cluster with RKE
+RKE is a CNCF-certified Kubernetes distribution that runs entirely within Docker containers.
+
+![RKE Logo](rke.png)
 
 ## Requirements/Prerequisites
 - [Rancher Kubernetes Engine (RKE)](https://rancher.com/docs/rke/latest/en/installation/)
@@ -17,7 +49,7 @@ ssh-copy-id root@[relevant ip address]
 ```
 When prompted, enter the root user password configured in the bootstrap node script.
 
-## Provision/Create Kubernetes cluster with RKE
+## Provision/Create Kubernetes Cluster with RKE
 To provision the cluster on the VMs, run the `rke config` command. You will be presented with a series of questions to which the answers will be used to declare the cluster config in a generated `cluster.yml` file upon completion. Alternatively, you can create the cluster.yml file and populate it with your desired configuration. Once you have the `cluster.yml` file, run the following command:
 ```
 rke up
