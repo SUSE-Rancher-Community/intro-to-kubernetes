@@ -17,7 +17,7 @@ k3d is a lightweight wrapper to run k3s (Rancher Lab’s minimal Kubernetes dist
 - [Install K3d](https://k3d.io/v4.4.8/#installation)
 
 ## Provision Cluster with K3d
-The first step is to ensure that the docker engine is running on your machine.
+The first step is to ensure that the docker engine is running on your machine. Once you've verified that, you can proceed to create a cluster with the following command:
 ```
 k3d cluster create example-cluster --servers 3 --agents 2
 ```
