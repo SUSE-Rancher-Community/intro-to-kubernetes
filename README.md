@@ -10,11 +10,11 @@ The slide deck for the `Introduction to Kubernetes` course can be found in the *
 
 ## Install Rancher Desktop
 
-[Racker Desktop](https://github.com/rancher-sandbox/rancher-desktop/releases), download the latest version of _Rancher Desktop_for your desktop operating system.
+[Rancher Desktop](https://github.com/rancher-sandbox/rancher-desktop/releases), download the latest version of _Rancher Desktop_for your desktop operating system.
 
 ## Install `kubectl`
 
-This like for [kubectl](https://kubernetes.io/docs/tasks/tools/) will cover the full installation of `kubectl`. Download and install `kubectl` for your desktop operating system.
+This link for [kubectl](https://kubernetes.io/docs/tasks/tools/) will cover the full installation of `kubectl`. Download and install `kubectl` for your desktop operating system.
 
 ## Create Local Kubernetes Cluster with K3d
 
