@@ -12,14 +12,21 @@ echo -e "iamadmin\niamadmin" | passwd root >/dev/null 2>&1
 
 # Commands for all K8s nodes
 # Add Docker GPG key, Docker Repo, install Docker and enable services
+# For openSUSE Leap 15.3 need to add kernel-default-extra for the overlay and
+# br_netfilter kernel modules
+# Also add chrony for time sync
 # Add repo and Install packages
 sudo zypper --non-interactive update
-sudo zypper --non-interactive install docker
+sudo zypper --non-interactive install docker kernel-default-extra chrony
 
 # Start and enable Services
+sudo systemctl enable chronyd
+sudo systemctl start chronyd
 sudo systemctl daemon-reload 
 sudo systemctl enable docker
 sudo systemctl start docker
+# Set your timezone if required (optional) for example US Central time
+# sudo timedatectl set-timezone America/Chicago
 
 #Confirm that docker group has been created on system
 sudo groupadd docker
